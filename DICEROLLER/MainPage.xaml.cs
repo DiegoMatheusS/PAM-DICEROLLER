@@ -9,7 +9,14 @@
             InitializeComponent();
         }
 
-        private void CalculaTip(object sender, EventArgs e)
+        private void Next(object sender, EventArgs e)
+        {
+
+           
+
+        }
+        
+        private void BottonPickerCalcule(object sender, EventArgs e)
         {
 
             Random rnd = new Random();
@@ -18,14 +25,6 @@
 
             for (uint ctr = 1; ctr <= 6; ctr++)
                 Console.WriteLine($"{rnd.Next(),15:N0}");
-
-
-        }
-        
-        private void BottonPickerCalcule(object sender, EventArgs e)
-        {
-            int clck = CalculaTip();
-            double amount = double.Parse(Dado.Text);
         }
 
     }

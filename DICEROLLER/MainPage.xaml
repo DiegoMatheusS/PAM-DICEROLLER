@@ -24,8 +24,10 @@
                 FontSize="80"
                 HorizontalOptions="Center"
                 />
-
-            <Picker x:Name="pickerSelect" 
+           
+            <Picker 
+                WidthRequest="350"
+                x:Name="pickerSelect"
                  Title="Quantidade de dados">
                 <Picker.ItemsSource>
                     <x:Array Type="{x:Type x:Int32} ">
@@ -39,6 +41,7 @@
                 </Picker.ItemsSource>
             </Picker>
             <Button
+                WidthRequest="150"
                 x:Name="BottonPicker"
                 Text="ROLAR O DADO" 
                 Clicked="BottonPickerCalcule"
