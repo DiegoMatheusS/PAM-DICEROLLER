@@ -2,30 +2,59 @@
 {
     public partial class MainPage : ContentPage
     {
-        int count = 0;
+        int valor = 0;
 
         public MainPage()
         {
+
             InitializeComponent();
-        }
-
-        private void Next(object sender, EventArgs e)
-        {
-
-           
-
+            SidesPicker.SelectedIndex = 0;
         }
         
-        private void BottonPickerCalcule(object sender, EventArgs e)
+        private void RollBtn_Clicked(object sender, EventArgs e)
         {
+            //Pegar o  valor selecionado do picker 
+            //Jogar esse valor em uma variável  \/
+            valor = Convert.ToInt32(SidesPicker.SelectedItem);
 
-            Random rnd = new Random();
+            //Sortear um numero em um dado utilizando o Random
+            //Colocar o valor sorteado em uma variavel
+            
+            int umvalor = 0;
+            umvalor = new Random().Next(1, valor +1);
 
-            Console.WriteLine("Generating 6 random numbers:");
-
-            for (uint ctr = 1; ctr <= 6; ctr++)
-                Console.WriteLine($"{rnd.Next(),15:N0}");
+            //Exibir o Valor para o usuario em uma Label (ResultLabel)
+            ResultLabel.Text = umvalor.ToString();
         }
+
+
+
+
+
+
+        /* Com DisplayAlert
+         * 
+         * private async void RollBtn_Clicked(object sender, EventArgs e)
+        {
+            if (valor == 0)
+            {
+                await DisplayAlert("ALERTA", "Deverá Selecionar um número antes", "Voltar");
+            }
+            //Pegar o  valor selecionado do picker 
+            //Jogar esse valor em uma variável  \/
+            valor = Convert.ToInt32(SidesPicker.SelectedItem);
+
+            //Sortear um numero em um dado utilizando o Random
+            //Colocar o valor sorteado em uma variavel
+
+            var umvalor = 0;
+            umvalor = new Random().Next(1, valor + 1);
+
+            //Exibir o Valor para o usuario em uma Label (ResultLabel)
+            ResultLabel.Text = umvalor.ToString(); 
+        }
+        */
+
 
     }
 
